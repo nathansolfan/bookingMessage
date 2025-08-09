@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('waiting_lists', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('customer_id')->constrained();
+            $table->string('service');
+            $table->enum('status', ['waiting', 'notified'])->default('waiting');
             $table->timestamps();
         });
     }
