@@ -45,4 +45,17 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+    //relationship - An user HAS MANY customers and waitingLists
+    public function customers()
+    {
+        return $this->hasMany(Customer::class);
+    }
+
+    public function waitingLists()
+    {
+        return $this->hasMany(WaitingList::class);
+    }
+
 }
