@@ -22,8 +22,12 @@ class DashboardController extends Controller
 
     }
 
-    public function addToWaitingList()
+    public function addToWaitingList(Request $request)
     {
+        dd($request->all());
+        //data from form
+        //service to add customer
+        //redirect
 
     }
 }

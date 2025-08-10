@@ -13,4 +13,13 @@ class DashboardService
         return $waitingList;
     }
 
+    public function addCustomer(array $data)
+    {
+        //get logged user
+        //find customer on table
+        //create
+        //relation everything
+
+    }
+
 }
