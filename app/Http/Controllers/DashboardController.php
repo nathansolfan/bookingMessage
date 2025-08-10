@@ -16,6 +16,9 @@ class DashboardController extends Controller
 
     public function index()
     {
+        //get data from service
+        $waitingList = $this->dashboardService->getWaitingList();
+        return view('dashboard', compact('waitingList'));
 
     }
 
