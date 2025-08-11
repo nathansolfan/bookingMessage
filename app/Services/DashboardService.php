@@ -35,10 +35,23 @@ class DashboardService
             'service' => $data['service'],
             'status' => 'waiting'
         ]);
-
         //create
         //relation everything
 
+    }
+
+    public function notifyCustomers()
+    {
+        $model = WaitingList::find($id);
+        //find waiting_list
+        $notified = $model->update(['status' => 'notified']);
+
+        if (!$notified){
+            return ['error' => 'Did not work'];
+        }
+        return $notified;
+        //change status
+        //save
     }
 
 }

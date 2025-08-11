@@ -60,6 +60,7 @@
                 <h3 class="text-lg font-semibold mb-4">Waiting List</h3>
                 @forelse($waitingList as $waiting)
                     <div>{{ $waiting->customer->name  }}</div>
+                    <div> {{$waiting->customer->phone }} </div>
                 @empty
                     <p>No customers waiting</p>
                 @endforelse
