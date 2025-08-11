@@ -40,7 +40,7 @@ class DashboardService
 
     }
 
-    public function notifyCustomers()
+    public function notifyCustomer($id)
     {
         $model = WaitingList::find($id);
         //find waiting_list

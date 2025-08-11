@@ -19,7 +19,6 @@ class DashboardController extends Controller
         //get data from service
         $waitingList = $this->dashboardService->getWaitingList();
         return view('dashboard', compact('waitingList'));
-
     }
 
     public function addToWaitingList(Request $request)
@@ -29,11 +28,18 @@ class DashboardController extends Controller
         return redirect()->back()->with('success', 'Customer added to waiting list!');
 
 //        dd($user);
-
-
         //data from form
         //service to add customer
         //redirect
         //        dd($request->all());
     }
+
+
+    public function notify($id)
+    {
+        $this->dashboardService->notifyCustomer($id);
+
+    }
+
+
 }
