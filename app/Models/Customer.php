@@ -6,6 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
+
+    protected $fillable = [
+        'name',
+        'phone',
+        'user_id',
+    ];
+
+
+
+
+
     //customer BELONGSTO an User and HASMANY WaitlingLists
     public function user()
     {

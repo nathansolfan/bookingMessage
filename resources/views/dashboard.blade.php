@@ -58,8 +58,15 @@
             {{--waiting list--}}
             <div class="bg-white p-6 rounded shadow">
                 <h3 class="text-lg font-semibold mb-4">Waiting List</h3>
-                <p class="text-gray-500">Done later</p>
+                @forelse($waitingList as $waiting)
+                    <div>{{ $waiting->customer->name  }}</div>
+                @empty
+                    <p>No customers waiting</p>
+                @endforelse
+
+
             </div>
+
 
         </div>
     </div>

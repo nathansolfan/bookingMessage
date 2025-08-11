@@ -6,8 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class WaitingList extends Model
 {
-    //belongsTO an User and BelongsTO a Customer
 
+
+    protected $fillable = [
+        'user_id',
+        'customer_id',
+        'service',
+        'status'
+    ];
+
+    //belongsTO an User and BelongsTO a Customer
     public function user()
     {
         return $this->belongsTo(User::class);

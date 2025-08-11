@@ -24,10 +24,16 @@ class DashboardController extends Controller
 
     public function addToWaitingList(Request $request)
     {
-        dd($request->all());
+        $this->dashboardService->addCustomer($request->all());
+
+        return redirect()->back()->with('success', 'Customer added to waiting list!');
+
+//        dd($user);
+
+
         //data from form
         //service to add customer
         //redirect
-
+        //        dd($request->all());
     }
 }
