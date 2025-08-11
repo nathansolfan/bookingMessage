@@ -43,9 +43,12 @@ class DashboardService
     public function notifyCustomer($id)
     {
         $model = WaitingList::find($id);
+        if (!$model){
+            return ['error' => 'Could not find'];
+        }
+
         //find waiting_list
         $notified = $model->update(['status' => 'notified']);
-
         if (!$notified){
             return ['error' => 'Did not work'];
         }

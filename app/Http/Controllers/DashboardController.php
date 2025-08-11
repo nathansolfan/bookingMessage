@@ -37,7 +37,9 @@ class DashboardController extends Controller
 
     public function notify($id)
     {
-        $this->dashboardService->notifyCustomer($id);
+        $result = $this->dashboardService->notifyCustomer($id);
+        //check
+        //redirect
 
     }
 
