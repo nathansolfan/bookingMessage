@@ -18,7 +18,7 @@ class WhatsappService
             'whatsapp:+447481443143',
             [
                 'from' => env('twilio_whatsapp_from'),
-                'to' => 'Test: Sending message, '
+                'body' => 'Test: Sending message, '
             ]
         );
         return $message->sid;
