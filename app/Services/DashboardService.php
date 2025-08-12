@@ -62,4 +62,28 @@ class DashboardService
 
     }
 
+
+
+    public function getnotifiedCustomers()
+    {
+        //logged
+        $user = auth()->user();
+
+        $notified = $user->waitingLists()
+            ->where('status', 'notified')
+            ->with('customer')
+            ->orderBy('updated_at', 'asc')
+            ->get();
+
+        return $notified;
+
+
+
+
+        // Buscar waiting_lists com status 'notified'
+        // Com customer data
+        // Ordenado por data (mais recente primeiro)
+
+    }
+
 }
