@@ -61,15 +61,22 @@
                 @forelse($waitingList as $waiting)
                     <div> {{ $waiting->customer->name  }} </div>
                     <div> {{ $waiting->customer->phone }} </div>
+
+                    <div>
+                        {{-- since ->name on route, use route()       --}}
+                        {{-- <form action="/notify/{{$waiting->id}}"> --}}
+                        <form action=" {{route('notify', $waiting->id)}}" method="post">
+                            @csrf
+                            <button type="submit">Notify</button>
+                        </form>
+                    </div>
                 @empty
                     <p>No customers waiting</p>
                 @endforelse
             </div>
-            
-            <div>
-                <form action=""></form>
-            </div>
-            
+
+
+
 
 
         </div>
