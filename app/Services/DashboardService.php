@@ -53,9 +53,13 @@ class DashboardService
         if (!$notified){
             return ['error' => 'Did not work'];
         }
+
+        $whatsapp = new WhatsappService();
+        $whatsapp->sendNotification();
+
         return $notified;
-        //change status
-        //save
+
+
     }
 
 }

@@ -24,6 +24,14 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
+//DASHBOARD
 Route::post('/dashboard/add', [DashboardController::class, 'addToWaitingList'])->name('dashboard.add');
-
 Route::post('/notify/{id}', [DashboardController::class, 'notify'])->name('notify');
+
+
+//WHATSAPP
+Route::get('/whatsapp', function () {
+    $whatsapp = new \App\Services\WhatsappService();
+    $result = $whatsapp->sendNotification();
+    return 'Message sent' . $result;
+});
