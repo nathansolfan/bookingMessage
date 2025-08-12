@@ -11,8 +11,9 @@ class DashboardService
     public function getWaitingList()
     {
         $user = auth()->user();
-        //relationship
-        $waitingList = $user->waitingLists()->get();
+        //relationship - get all
+//        $waitingList = $user->waitingLists()->get();
+        $waitingList = $user->waitingLists()->where('status', 'waiting')->get();
         return $waitingList;
     }
 
