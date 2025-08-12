@@ -38,8 +38,14 @@ class DashboardController extends Controller
     public function notify($id)
     {
         $result = $this->dashboardService->notifyCustomer($id);
+
         //check
+        if (isset($result['error'])){
+            return redirect()->back()->with('error', 'It did not work');
+        }
+
         //redirect
+        return redirect()->back()->with('success', 'It worked');
 
     }
 

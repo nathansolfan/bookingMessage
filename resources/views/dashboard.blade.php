@@ -64,9 +64,12 @@
                 @empty
                     <p>No customers waiting</p>
                 @endforelse
-
-
             </div>
+            
+            <div>
+                <form action=""></form>
+            </div>
+            
 
 
         </div>
