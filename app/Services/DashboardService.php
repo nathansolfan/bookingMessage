@@ -64,7 +64,7 @@ class DashboardService
 
 
 
-    public function getnotifiedCustomers()
+    public function customerHistory()
     {
         //logged
         $user = auth()->user();

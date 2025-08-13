@@ -28,7 +28,7 @@ require __DIR__.'/auth.php';
 Route::post('/dashboard/add', [DashboardController::class, 'addToWaitingList'])->name('dashboard.add');
 Route::post('/notify/{id}', [DashboardController::class, 'notify'])->name('notify');
 //HISTORY
-Route::get('/history', [DashboardController::class, 'history'])
+Route::get('/history', [DashboardController::class, 'history']);
 
 
 //WHATSAPP

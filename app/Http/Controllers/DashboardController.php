@@ -26,12 +26,7 @@ class DashboardController extends Controller
         $this->dashboardService->addCustomer($request->all());
 
         return redirect()->back()->with('success', 'Customer added to waiting list!');
-
-//        dd($user);
-        //data from form
-        //service to add customer
-        //redirect
-        //        dd($request->all());
+        //dd($request->all());
     }
 
 
@@ -46,8 +41,20 @@ class DashboardController extends Controller
 
         //redirect
         return redirect()->back()->with('success', 'It worked');
+    }
+
+
+    public function history()
+    {
+        $history = $this->dashboardService->customerHistory();
+        // 1. Chamar service
+        // 2. Pegar dados
+        // 3. Passar para view
+        // 4. Retornar view
 
     }
+
+
 
 
 }

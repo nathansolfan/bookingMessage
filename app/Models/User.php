@@ -46,7 +46,6 @@ class User extends Authenticatable
         ];
     }
 
-
     //relationship - An user HAS MANY customers and waitingLists
     public function customers()
     {
