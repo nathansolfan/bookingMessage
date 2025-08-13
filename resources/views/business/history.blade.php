@@ -27,6 +27,7 @@
                             <form action="/historyDelete/{{$item->id}}" method="post">
                                 @csrf
                                 <button type="submit">Delete</button>
+                                <p> </p>
                             </form>
                         </div>
 
