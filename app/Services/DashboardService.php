@@ -76,14 +76,6 @@ class DashboardService
             ->get();
 
         return $notified;
-
-
-
-
-        // Buscar waiting_lists com status 'notified'
-        // Com customer data
-        // Ordenado por data (mais recente primeiro)
-
     }
 
 }
