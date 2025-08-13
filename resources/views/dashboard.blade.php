@@ -62,9 +62,9 @@
                     @forelse($waitingList as $waiting)
                         <div class="flex justify-between items-center p-4 border-b">
                             <div>
-                                <h4 class="font-medium">{{ $waiting->customer->name }}</h4>
-                                <p class="text-gray-600 text-sm">{{ $waiting->customer->phone }}</p>
-                                <p class="text-sm">{{ $waiting->service }}</p>
+                                <h4><span class="text-sm text-gray-500">Name:</span> <span class="font-medium">{{ $waiting->customer->name }}</span></h4>
+                                <p><span class="text-sm text-gray-500">Phone:</span> <span class="text-gray-600 text-sm">{{ $waiting->customer->phone }}</span></p>
+                                <p><span class="text-sm text-gray-500">Service:</span> <span class="text-sm font-medium">{{ $waiting->service }}</span></p>
                             </div>
 
                             <div>

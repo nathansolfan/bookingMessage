@@ -15,9 +15,9 @@
 
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <h4 class="font-medium">{{ $item->customer->name }}</h4>
-                                    <p class="text-gray-600 text-sm">{{ $item->customer->phone }}</p>
-                                    <p class="text-sm">{{ $item->service }}</p>
+                                    <h4><span class="text-sm text-gray-500">Name:</span> <span class="font-medium">{{ $item->customer->name }}</span></h4>
+                                    <p><span class="text-sm text-gray-500">Phone:</span> <span class="text-gray-600 text-sm">{{ $item->customer->phone }}</span></p>
+                                    <p><span class="text-sm text-gray-500">Service:</span> <span class="text-sm font-medium">{{ $item->service }}</span></p>
                                 </div>
                                 <div class="text-right text-sm text-gray-500">
                                     {{ $item->updated_at->format('d/m/Y H:i') }}
