@@ -29,6 +29,7 @@ Route::post('/dashboard/add', [DashboardController::class, 'addToWaitingList'])-
 Route::post('/notify/{id}', [DashboardController::class, 'notify'])->name('notify');
 //HISTORY
 Route::get('/history', [DashboardController::class, 'history']);
+Route::post('/historyDelete/{id}', [DashboardController::class, 'delete']);
 
 
 //WHATSAPP

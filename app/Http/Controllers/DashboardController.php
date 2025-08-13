@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\WaitingList;
 use App\Services\DashboardService;
 use Illuminate\Http\Request;
 
@@ -47,11 +48,25 @@ class DashboardController extends Controller
     public function history()
     {
         $history = $this->dashboardService->customerHistory();
-        // 1. Chamar service
-        // 2. Pegar dados
-        // 3. Passar para view
-        // 4. Retornar view
 
+        return view('business/history', compact('history'));
+    }
+
+    public function delete($id)
+    {
+        $waitingList = WaitingList::find($id);
+
+//        if (!$waitingList || $waitingList->user_id !== auth()->user() ) {
+//            return redirect()->back()->with('error', 'not found');
+//        }
+
+        if (!$waitingList){
+            return redirect()->back()->with('error', 'not found');
+        }
+
+        $waitingList->delete();
+
+        return redirect()->back()->with('success', 'Deleted');
     }
 
 

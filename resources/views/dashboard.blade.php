@@ -41,7 +41,7 @@
                                        name="service"
                                        required
                                        class="mt-1 block w-full border-gray-300 rounded-md"
-                                       placeholder="Haircut, Beard, etc">
+                                       placeholder="Service type">
                             </div>
                         </div>
 
@@ -56,33 +56,37 @@
             </div>
 
             {{--waiting list--}}
-            <div class="bg-white p-6 rounded shadow">
-                <h3 class="text-lg font-semibold mb-4">Waiting List</h3>
-                @forelse($waitingList as $waiting)
-                    <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg mb-3 border">
-                        <div>
-                            <h4 class="font-semibold text-lg">{{ $waiting->customer->name }}</h4>
-                            <p class="text-gray-600">📱 {{ $waiting->customer->phone }}</p>
-                            <p class="text-blue-600">🔧 {{ $waiting->service }}</p>
-                        </div>
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold mb-4">Waiting List</h3>
+                    @forelse($waitingList as $waiting)
+                        <div class="flex justify-between items-center p-4 border-b">
+                            <div>
+                                <h4 class="font-medium">{{ $waiting->customer->name }}</h4>
+                                <p class="text-gray-600 text-sm">{{ $waiting->customer->phone }}</p>
+                                <p class="text-sm">{{ $waiting->service }}</p>
+                            </div>
 
-                        <div>
-                            <form action="{{route('notify', $waiting->id)}}" method="post">
-                                @csrf
-                                <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg">
-                                    📤 Notify
-                                </button>
-                            </form>
+                            <div>
+                                <form action="{{route('notify', $waiting->id)}}" method="post">
+                                    @csrf
+                                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm">
+                                        Notify
+                                    </button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                @empty
-                    <p class="text-gray-500">No customers waiting</p>
-                @endforelse
+                    @empty
+                        <p class="text-gray-500">No customers waiting</p>
+                    @endforelse
+                </div>
             </div>
 
-
-
-
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6">
+                    <a href="/history" class="font-semibold">Check history</a>
+                </div>
+            </div>
 
         </div>
     </div>
