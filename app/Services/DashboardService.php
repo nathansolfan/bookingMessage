@@ -55,13 +55,15 @@ class DashboardService
         }
 
         $whatsapp = new WhatsappService();
-        $whatsapp->sendNotification();
+        //sendNoti from whataappservice
+        $whatsapp->sendNotification(
+            $model->customer->name,
+            $model->customer->phone,
+            $model->service
+        );
 
         return $notified;
-
-
     }
-
 
 
     public function customerHistory()

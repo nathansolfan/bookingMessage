@@ -7,21 +7,23 @@ use Twilio\Rest\Client;
 
 class WhatsappService
 {
-    public function sendNotification()
+    public function sendNotification($customerName, $customerPhone, $service)
     {
         $api = env('twilio_sid');
         $token = env('twilio_token');
 
         $twilio = new Client($api, $token);
 
-        $message = $twilio->messages->create(
-            'whatsapp:+447481443143',
+        $message = "Hi {$customerName}! We now have avaibility for your {$service}. Please confirm your appointment.";
+
+        $result = $twilio->messages->create(
+            "whatsapp:{$customerPhone}",
             [
                 'from' => env('twilio_whatsapp_from'),
-                'body' => 'Test: Sending message, '
+                'body' => $message
             ]
         );
-        return $message->sid;
+        return $result->sid;
 
     }
 
