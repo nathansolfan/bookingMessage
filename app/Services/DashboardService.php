@@ -55,12 +55,7 @@ class DashboardService
         }
 
         $whatsapp = new WhatsappService();
-        //sendNoti from whataappservice
-        $whatsapp->sendNotification(
-            $model->customer->name,
-            $model->customer->phone,
-            $model->service
-        );
+        $whatsapp->sendNotification();
 
         return $notified;
     }
